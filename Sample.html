@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var orders = [
+        {
+          orderNumber: 10011,
+          customerName: "Vineesh",
+          customerMobile: "+911222111",
+          orderLineItems: [
+            {
+              productId: 11,
+              productName: "iPhone 14 Pro",
+              quantity: 1,
+              price: 80000,
+            },
+            {
+              productId: 19,
+              productName: "iPhone 14 Pro Insurance",
+              quantity: 1,
+              price: 25000,
+            },
+            {
+              productId: 11,
+              productName: "iPhone 14 Pro Cover",
+              quantity: 1,
+              price: 2500,
+            },
+          ],
+        },
+      ];
+      var sum=0;
+    
+      
+      for (var o of orders) {
+        console.log(o);
+        for (var key in orders[0].orderLineItems){
+            // console.log(orders[0].orderLineItems[key].price)
+            sum=sum+orders[0].orderLineItems[key].price*orders[0].orderLineItems[key].quantity;
+        }
+      }
+      console.log("Total price is"+" "+sum);
+   
+    </script>
+  </body>
+</html>
